@@ -1,16 +1,18 @@
-import './App.css';
-import Header from './Header';
+import './App.css'
+import Header from './Header'
+import Sidebar from './Sidebar.js'
+import Feed from './Feed.js'
 
 function App() {
   return (
     // BEM naming convention
     <div className="app">
-      <Header/>
-
-      {/* App Body */}
-        {/* Sidebar */}
-        {/* Feed */}
+      <Header />
+      <div className="app__body">
+        <Sidebar />
+        <Feed />
         {/* Widgets */}
+      </div>
     </div>
   );
 }
