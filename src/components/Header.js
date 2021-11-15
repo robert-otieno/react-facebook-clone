@@ -1,4 +1,3 @@
-import React from 'react'
 import './Header.css'
 import SearchIcon from '@mui/icons-material/Search';
 import { Add, ExpandMore, Flag, Forum, Home, NotificationsActive, StorefrontOutlined, SubscriptionsOutlined, SupervisedUserCircle } from '@mui/icons-material';

@@ -1,5 +1,4 @@
-import React from 'react'
-import Story from './Story'
+import Story from './components/Story'
 import './StoryReel.css'
 
 function StoryReel() {

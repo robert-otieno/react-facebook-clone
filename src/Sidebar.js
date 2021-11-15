@@ -1,6 +1,6 @@
 import { Chat, EmojiFlags, ExpandLessOutlined, LocalHospital, People, Storefront, VideoLibrary } from '@mui/icons-material'
 import './Sidebar.css'
-import SidebarRow from './SidebarRow'
+import SidebarRow from './components/SidebarRow'
 
 function Sidebar() {
     return (
