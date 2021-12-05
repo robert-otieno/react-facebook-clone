@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { InsertEmoticon, PhotoLibrary, Videocam } from '@mui/icons-material';
 import { Avatar } from '@mui/material'
 import './MessageSender.css'
+import { useStateValue } from '../StateProvider'
 
 function MessageSender() {
-const [input, setInput] = useState('')
-const [imageUrl, setImageUrl] = useState('')
+  const [{ user }, dispatch] = useStateValue()
+  const [input, setInput] = useState('')
+  const [imageUrl, setImageUrl] = useState('')
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -18,9 +20,9 @@ const [imageUrl, setImageUrl] = useState('')
   return (
     <div className='messageSender'>
       <div className="messageSender__top">
-        <Avatar />
+        <Avatar src={user.photoURL}/>
         <form action="">
-          <input className='messageSender__input' value={input} onChange={e => setInput(e.target.value)} placeholder={"What's on your mind?"} />
+          <input className='messageSender__input' value={input} onChange={e => setInput(e.target.value)} placeholder={`What's on your mind, ${user.displayName}?`} />
           <input value={imageUrl} onChange={e => setImageUrl(e.target.value)} placeholder='Image URL (Optional)'/>
           <button onClick={handleSubmit} type="submit">Hidden Submit</button>
         </form>

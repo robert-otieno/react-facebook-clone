@@ -2,8 +2,11 @@ import './Header.css'
 import SearchIcon from '@mui/icons-material/Search';
 import { Add, ExpandMore, Flag, Forum, Home, NotificationsActive, StorefrontOutlined, SubscriptionsOutlined, SupervisedUserCircle } from '@mui/icons-material';
 import { Avatar, IconButton } from '@mui/material';
+import { useStateValue } from '../StateProvider'
 
 function Header() {
+    const [{ user }, dispatch] = useStateValue()
+
     return (
         <div className="header">
             <div className='header__left'>
@@ -32,8 +35,8 @@ function Header() {
             </div>
             <div className='header__right'>
                 <div className="header__info">
-                    <Avatar/>
-                    <h4>Johnny</h4>
+                    <Avatar src={user.photoURL}/>
+                    <h4>{user.displayName}</h4>
                     <IconButton>
                         <Add/>
                     </IconButton>
